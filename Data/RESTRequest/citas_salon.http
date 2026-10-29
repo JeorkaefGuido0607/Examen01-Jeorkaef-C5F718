@@ -1,0 +1,47 @@
+@host = http://localhost:8080/api
+
+@uri = {{host}}/citas_salon
+
+###
+POST {{uri}}
+Content-Type: application/json
+
+{
+    "nombre_cliente": "María Fernanda Solís",
+    "telefono_cliente": "8888-1234",
+    "servicio_solicitado": "Corte y peinado",
+    "estilista_asignado": "Andrea Castro",
+    "fecha_hora_cita": "2027-03-15 10:30:00",
+    "precio_servicio": 15000
+}
+
+###
+POST {{uri}}
+Content-Type: application/json
+
+{
+    "nombre_cliente": "Fernando Guido Hernandez",
+    "telefono_cliente": "7101-2041",
+    "servicio_solicitado": "Corte y peinado",
+    "estilista_asignado": "Maria Guido",
+    "fecha_hora_cita": "2027-03-15 11:30:00",
+    "precio_servicio": 20000
+}
+
+###
+GET {{uri}}
+
+###
+GET {{uri}}/1
+
+###
+PUT {{uri}}/1
+Content-Type: application/json
+
+{
+    "precio_servicio": 18000,
+    "estado": "Completada"
+}
+
+###
+DELETE {{uri}}/1

@@ -1,0 +1,151 @@
+@host = http://localhost:9090/api
+@uri = {{host}}/citas_salon
+
+###
+GET {{uri}}
+
+###
+POST {{uri}}
+Content-Type: application/json
+
+{
+    "nombre_cliente": "María Fernanda Solís",
+    "telefono_cliente": "8888-1234",
+    "servicio_solicitado": "Corte y peinado",
+    "estilista_asignado": "Andrea Castro",
+    "fecha_hora_cita": "2027-03-15 10:30:00",
+    "precio_servicio": 15000
+}
+
+###
+POST {{uri}}
+Content-Type: application/json
+
+{
+    "nombre_cliente": "José Pablo Arias",
+    "telefono_cliente": "87654321",
+    "servicio_solicitado": "Corte de barba",
+    "estilista_asignado": "Kevin Brenes",
+    "fecha_hora_cita": "2027-03-16 15:00:00",
+    "precio_servicio": 8000
+}
+
+###
+POST {{uri}}
+Content-Type: application/json
+
+{
+    "nombre_cliente": "Laura Vega",
+    "telefono_cliente": "8777-0000",
+    "servicio_solicitado": "Manicura",
+    "estilista_asignado": "Andrea Castro",
+    "fecha_hora_cita": "2027-04-01 09:00:00",
+    "precio_servicio": 10000,
+    "estado": "Completada"
+}
+
+###
+POST {{uri}}
+Content-Type: application/json
+
+{
+    "nombre_cliente": "Laura Vega",
+    "telefono_cliente": "8777-0000",
+    "servicio_solicitado": "Manicura",
+    "estilista_asignado": "Andrea Castro",
+    "fecha_hora_cita": "2020-01-01 09:00:00",
+    "precio_servicio": 10000
+}
+
+###
+POST {{uri}}
+Content-Type: application/json
+
+{
+    "nombre_cliente": "",
+    "telefono_cliente": "123",
+    "servicio_solicitado": "",
+    "estilista_asignado": "",
+    "fecha_hora_cita": "15/03/2027",
+    "precio_servicio": 0,
+    "estado": "Atendida"
+}
+
+###
+POST {{uri}}
+Content-Type: application/json
+
+{
+    "nombre_cliente": "Ana",
+}
+
+###
+GET {{uri}}/1
+
+###
+GET {{uri}}/99999
+
+###
+PUT {{uri}}/1
+Content-Type: application/json
+
+{
+    "fecha_hora_cita": "2027-03-20 11:00:00"
+}
+
+###
+PUT {{uri}}/2
+Content-Type: application/json
+
+{
+    "fecha_hora_cita": "2020-01-01 09:00:00"
+}
+
+###
+PUT {{uri}}/2
+Content-Type: application/json
+
+{
+    "estado": "Completada"
+}
+
+###
+PUT {{uri}}/2
+Content-Type: application/json
+
+{
+    "precio_servicio": 20000
+}
+
+###
+PUT {{uri}}/2
+Content-Type: application/json
+
+{
+    "estado": "Cancelada"
+}
+
+###
+PUT {{uri}}/2
+Content-Type: application/json
+
+{
+    "estado": "Pendiente"
+}
+
+### 
+PUT {{uri}}/99999
+Content-Type: application/json
+
+{
+    "precio_servicio": 1000
+}
+
+###
+DELETE {{uri}}/2
+
+###
+DELETE {{uri}}/2
+
+###
+GET {{uri}}
